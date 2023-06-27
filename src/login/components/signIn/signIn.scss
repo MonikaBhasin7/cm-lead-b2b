@@ -1,0 +1,49 @@
+@import "../../../global/primitives/colors";
+@import "../../../global/primitives/font";
+
+//.root {
+//  display: flex;
+//  flex-direction: column;
+//}
+.welcomeText {
+  font-size: 26px;
+  font-family: $gilroy-bold-font;
+}
+
+.labelText {
+  display: block;
+  font-size: 14px;
+  font-family: $gilroy-medium-font;
+  padding-bottom: 4px;
+}
+
+input[type=text] {
+  //background-color: aqua;
+}
+
+input {
+  width: 100%;
+  padding: 12px 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid $stroke_divider;
+  border-radius: 4px;
+}
+
+//input:focus {
+//  border: 1px solid $primaryColor;
+//}
+
+.signInButton {
+  width: 100%;
+  background-color: $primaryColor;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 12px;
+  cursor: pointer;
+  font-family: $gilroy-medium-font;
+}
