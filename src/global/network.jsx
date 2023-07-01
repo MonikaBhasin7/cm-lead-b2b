@@ -1,6 +1,12 @@
-import axios from "axios";
+export async function getCall(url, data) {
+  let response = await fetch(url, { method: "GET" });
+  return await response.json();
+}
 
-export async function getCall() {
-  let response = await axios.get("http://localhost:8080/cmblogin");
-  print(`response - ${response.data}`);
+export async function postCall(url, data) {
+  let response = await fetch(url, {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+  return await response.json();
 }

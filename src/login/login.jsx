@@ -1,6 +1,7 @@
 import "./login.scss";
 import SignIn from "./components/signIn/signIn";
 import { useEffect, useState } from "react";
+import { postCall } from "../global/network";
 
 function Login() {
   const [loginData, setLoginData] = useState({
@@ -8,6 +9,14 @@ function Login() {
     email: null,
     password: null,
   });
+  useEffect(() => {
+    console.log(`useEffect - ${loginData.is_logged_in}`);
+    if (loginData.is_logged_in === true) {
+      //navigate to listing page
+      console.log("logged in");
+    }
+  }, [loginData]);
+
   return (
     <div className="root">
       {/*HK*/}
@@ -22,15 +31,15 @@ function Login() {
     </div>
   );
 
-  function doLogin(email, password) {
+  async function doLogin(email, password) {
     console.log("doLogin", email, password);
+    let result = await postCall("http://localhost:8080/cmblogin", {
+      email: email,
+      password: password,
+    });
+    console.log("loginresponse - ", result);
+    setLoginData(result);
   }
-
-  useEffect(() => {
-    if (loginData.is_logged_in === true) {
-      //navigate to listing page
-    }
-  }, [loginData]);
 }
 
 export default Login;
