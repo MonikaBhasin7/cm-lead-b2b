@@ -1,13 +1,19 @@
 import "./login.scss";
 import SignIn from "./components/signIn/signIn";
+import { useEffect, useState } from "react";
 
 function Login() {
+  const [loginData, setLoginData] = useState({
+    is_logged_in: false,
+    email: null,
+    password: null,
+  });
   return (
     <div className="root">
       {/*HK*/}
       <div className="loginContainer">
         <div style={{ flexGrow: 1 }}></div>
-        <SignIn />
+        <SignIn onClick={doLogin} />
         <div style={{ flexGrow: 1 }}></div>
       </div>
       <div className="carousalContainer">
@@ -15,6 +21,16 @@ function Login() {
       </div>
     </div>
   );
+
+  function doLogin(email, password) {
+    console.log("doLogin", email, password);
+  }
+
+  useEffect(() => {
+    if (loginData.is_logged_in === true) {
+      //navigate to listing page
+    }
+  }, [loginData]);
 }
 
 export default Login;
