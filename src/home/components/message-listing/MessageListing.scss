@@ -1,0 +1,75 @@
+@import "../../../global/primitives/colors";
+@import "../../../global/primitives/font";
+
+.messageRoot {
+  margin: 16px;
+  padding: 24px;
+  border-radius: 24px;
+  height: 100vh;
+  background-color: #e6eeff;
+
+  input {
+    width: 100%;
+    padding: 16px 16px;
+    box-sizing: border-box;
+    border: 1px solid $stroke_divider;
+    border-radius: 24px;
+    font-size: 24px;
+    font-family: $gilroy-bold-font;
+  }
+
+  .userRow {
+    display: flex;
+    flex-direction: row;
+    margin: 24px 16px 26px 16px;
+
+    .userName {
+      font-size: 24px;
+      font-family: $gilroy-semi-bold-font;
+      color: $black;
+    }
+
+    .lastMessage {
+      font-size: 18px;
+      font-family: $gilroy-semi-bold-font;
+      color: $label;
+    }
+
+    .lastMessageTime {
+      font-size: 16px;
+      font-family: $gilroy-semi-bold-font;
+      color: $black;
+    }
+
+    .unreadMessages {
+      background-color: $primaryColor;
+      color: $white;
+      font-size: 14px;
+      font-family: $gilroy-semi-bold-font;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      text-align: center;
+      display: flex;
+      width: 24px;
+      height: 24px;
+    }
+
+    hr.solid {
+      border-top: 3px solid #bbb;
+    }
+  }
+}
+
+.headingRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .messageText {
+    font-size: 32px;
+    font-family: $gilroy-bold-font;
+  }
+}
+
+

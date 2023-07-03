@@ -1,10 +1,11 @@
-import Login from "./login/login";
-import './App.scss';
+import "./App.scss";
+import Home from "./home/Home";
 
 export default function App() {
-    return (
-        <div>
-            <Login/>
-        </div>
-    )
+  return (
+    <div>
+      {/*<Login />*/}
+      <Home />
+    </div>
+  );
 }
